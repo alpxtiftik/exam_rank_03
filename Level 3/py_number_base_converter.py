@@ -20,4 +20,6 @@ def number_base_converter(number: str, from_base: int, to_base: int) -> str:
         return "0"
     out = ""
     while value > 0:
-        out
+        out = digits[value % to_base] + out
+        value = value //= to_base
+    return "-" out if negative else out
